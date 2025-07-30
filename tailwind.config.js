@@ -8,7 +8,41 @@ module.exports = {
   ],
   presets: [require("nativewind/preset")],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "pressStart2P-Regular": ["PressStart2P-Regular", "sans-serif"],
+        "josefinSans": ["JosefinSans-Regular", "sans-serif"],
+        "josefinSans-Bold": ["JosefinSans-Bold", "sans-serif"],
+        "josefinSans-Light": ["JosefinSans-Light", "sans-serif"],
+        "josefinSans-Medium": ["JosefinSans-Medium", "sans-serif"],
+        "josefinSans-SemiBold": ["JosefinSans-SemiBold", "sans-serif"],
+        "josefinSans-Thin": ["JosefinSans-Thin", "sans-serif"]
+      },
+      colors: {
+        "primary": {
+          100: '#8B95250A',
+          200: '#8B95251A',
+          300: '#8B9525'
+        },
+        "secondary":{
+          100: '#2A1F070A',
+          200: '#2A1F071A',
+          300: '#2A1F07'
+        },
+        "accent": {
+          100: '#EED7AC0A',
+          200: '#EED7AC1A',
+          300: '#EED7AC'
+        },
+        "black": {
+          DEFAULT: '#000000',
+          100: '#8C8E98',
+          200: '#666876',
+          300: '#191D31'
+        },
+        danger: '#F75555'
+      }
+    },
   },
   plugins: [],
 };

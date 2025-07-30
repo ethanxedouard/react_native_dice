@@ -4,7 +4,7 @@
     "slug": "react_native_dice",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/icons/dice.png",
     "scheme": "dice",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,7 +13,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/icons/dice.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true
@@ -21,20 +21,34 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/icons/dice.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "image": "./assets/icons/dice.png",
+          "resizeMode": "cover",
+          "backgroundColor": "#ffffff",
+          "enableFullScreenImage_legacy": true
         }
-      ]
-    ],
+      ],
+    [
+      "expo-font",
+      {
+        "fonts": [
+          "./assets/fonts/PressStart2P-Regular.ttf",
+          "./assets/fonts/JosefinSans-Bold.ttf",
+          "./assets/fonts/JosefinSans-Light.ttf",
+          "./assets/fonts/JosefinSans-Medium.ttf",
+          "./assets/fonts/JosefinSans-Regular.ttf",
+          "./assets/fonts/npxJosefinSans-SemiBold.ttf",
+          "./assets/fonts/JosefinSans-Thin.ttf"
+        ]
+      }
+    ]
+  ],
     "experiments": {
       "typedRoutes": true
     }
