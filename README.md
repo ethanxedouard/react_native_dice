@@ -1,50 +1,33 @@
-# Welcome to your Expo app 👋
+# 🎲 Craps Dice Game (React Native + Expo)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile dice game based on the classic **Craps** rules, built with **React Native**, **Expo**, and **Firebase** authentication & Firestore database.  
+Players can sign up, log in, and bet **fake money** while testing their luck.
 
-## Get started
+---
 
-1. Install dependencies
+## ✨ Features
+- **Firebase Authentication** – Sign up & sign in with email/password.
+- **Firestore Integration** – Stores and updates player balance.
+- **Classic Craps Rules** – Win or lose based on dice rolls.
+- **Betting System** – Place bets before rolling; bet is locked until the round ends.
+- **Persistent Balance** – Player’s balance is saved to Firestore.
+- **Responsive UI** – Works on iOS and Android.
+- **Settings Screen** – Accessed via top-right corner icon.
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## 🕹 How to Play
+1. **Sign In or Sign Up** to start.
+2. **Place Your Bet** before the first roll.
+3. Roll two dice:
+   - **7 or 11** → Win instantly 🎉
+   - **2, 3, or 12** → Lose instantly ❌
+   - **4, 5, 6, 8, 9, or 10** → That number becomes your **Point**.
+4. If you have a point:
+   - Keep rolling until you roll your **Point** again → **Win** 🎉
+   - If you roll a **7** before hitting your point → **Lose** ❌
+5. Balance updates after each round.
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 📂 Project Structure
