@@ -12,11 +12,16 @@ const Explore = () => {
     });
 
     return (
+        
         <SafeAreaView className="bg-accent-300 h-full">
-            <Text>Sign Out</Text>
-            <TouchableOpacity onPress={() => auth.signOut()}>
-                <Text>Sign Out</Text>
-            </TouchableOpacity>
+            <View className='items-center justify-center h-full gap-4'>
+                <TouchableOpacity onPress={() => router.replace('/home')}>
+                    <Text className='text-xl font-pressStart2P-Regular'>Return</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => auth.signOut()}>
+                    <Text className='text-xl font-pressStart2P-Regular'>Sign Out</Text>
+                </TouchableOpacity>
+            </View>
         </SafeAreaView>
     );
 }

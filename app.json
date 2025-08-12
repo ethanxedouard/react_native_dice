@@ -28,9 +28,9 @@
       [
         "expo-splash-screen",
         {
+          "backgroundColor": "#232323",
           "image": "./assets/icons/dice.png",
           "resizeMode": "cover",
-          "backgroundColor": "#ffffff",
           "enableFullScreenImage_legacy": true
         }
       ],

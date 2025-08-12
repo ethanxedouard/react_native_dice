@@ -5,8 +5,27 @@ import { auth } from '../FirebaseConfig'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
 import { router } from 'expo-router'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { doc, getDoc, setDoc } from 'firebase/firestore'
+import { getAuth } from 'firebase/auth'
+import { db } from "../FirebaseConfig"
 
 
+export async function checkOrCreateUserInFirestore() {
+  const auth = getAuth();
+  const user = auth.currentUser;
+  if (!user) return;
+
+  const userRef = doc(db, "users", user.uid);
+  const userDoc = await getDoc(userRef);
+
+  if (!userDoc.exists()) {
+    await setDoc(userRef, {
+      balance: 1000,
+      point: null,
+      lastRoll: [1, 1]
+    });
+  }
+}
 
 const SignIn = () => {
 
@@ -15,8 +34,9 @@ const SignIn = () => {
 
     const signIn = async () => {
         try {
-            const user = await signInWithEmailAndPassword(auth, email, password)
-            if (user) router.replace('/home');
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            await checkOrCreateUserInFirestore();
+            router.replace('/home');
         } catch (error: any) {
             console.log(error)
             alert('Sign in failed: ' + error.message)
@@ -25,8 +45,9 @@ const SignIn = () => {
 
     const signUp = async () => {
         try {
-            const user = await createUserWithEmailAndPassword(auth, email, password)
-            if (user) router.replace('/home');
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            await checkOrCreateUserInFirestore();
+            router.replace('/home');
         } catch (error: any) {
             console.log(error)
             alert('Sign up failed: ' + error.message)
