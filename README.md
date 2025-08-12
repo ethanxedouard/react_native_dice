@@ -31,3 +31,23 @@ Players can sign up, log in, and bet **fake money** while testing their luck.
 ---
 
 ## 📂 Project Structure
+project-root/
+├── assets/ # Images, icons, dice faces
+├── components/ # UI components
+├── screens/ # App screens (Login, Game, Settings)
+├── FirebaseConfig.js # Firebase setup
+├── app/ # Expo Router pages
+└── README.md
+
+yaml
+Copy
+Edit
+
+---
+
+## 🛠 Installation
+
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/your-username/craps-dice-game.git
+   cd craps-dice-game
